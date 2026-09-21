@@ -6,6 +6,10 @@ edit_uri: edit/main/docs/
 
 docs_dir: docs
 
+# includes/ 는 snippets 로만 쓰이는 조각이라 별도 페이지로 빌드하지 않는다.
+exclude_docs: |
+  includes/
+
 theme:
   name: material
   language: ko
@@ -30,6 +34,7 @@ theme:
     - toc.follow
 
 markdown_extensions:
+  - abbr
   - admonition
   - attr_list
   - def_list
@@ -45,7 +50,11 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+      base_path:
+        - docs
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
