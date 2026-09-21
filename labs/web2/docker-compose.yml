@@ -1,0 +1,12 @@
+services:
+  target:
+    build: .
+    # 127.0.0.1 에만 바인딩한다. 이 컨테이너는 의도적으로 취약하다.
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      # 보정 노브 — 장마다 값을 바꿔 오라클의 한계를 관찰한다.
+      TIMING_DELAY: "${TIMING_DELAY:-0.25}"
+      TIMING_JITTER: "${TIMING_JITTER:-0.0}"
+      RATE_LIMIT: "${RATE_LIMIT:-300}"
+      RATE_WINDOW: "${RATE_WINDOW:-10}"

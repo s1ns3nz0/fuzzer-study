@@ -1,0 +1,9 @@
+site/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# 랩 실행 산출물
+labs/**/out/
+labs/**/*.log

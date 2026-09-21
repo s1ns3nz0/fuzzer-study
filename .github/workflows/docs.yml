@@ -1,0 +1,46 @@
+name: docs
+
+# push 마다 빌드만 검사한다 (nav 오타, 깨진 링크 조기 발견).
+# 실제 배포는 수동 트리거일 때만 — 교재 완성 전까지 사이트를 공개하지 않는다.
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Build (strict)
+        run: mkdocs build --strict
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name == 'workflow_dispatch'
+        with:
+          path: site
+
+  deploy:
+    if: github.event_name == 'workflow_dispatch'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

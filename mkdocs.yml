@@ -1,0 +1,82 @@
+site_name: 퍼징으로 읽는 보안 감사
+site_description: 입력공간 탐색이라는 하나의 뼈대로 web2 · API · web3 감사를 관통하는 퍼징 교재
+site_url: https://example.github.io/fuzzer-study/
+repo_url: https://github.com/example/fuzzer-study
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+
+theme:
+  name: material
+  language: ko
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: 다크 모드로
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: 라이트 모드로
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
+    - search.highlight
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search:
+      lang: ko
+
+# docs/ko/ 아래에만 콘텐츠를 둔다. 영문판은 docs/en/ 을 추가하고
+# nav 에 붙이면 구조 변경 없이 들어온다.
+nav:
+  - 소개: ko/index.md
+  - 범위와 안전: ko/scope-and-safety.md
+  - "Part 0 · 퍼징의 뼈대":
+      - "1. 입력공간과 탐색": ko/part0/01-what-is-fuzzing.md
+      - "2. 퍼징의 5요소": ko/part0/02-five-elements.md
+      - "3. 오라클 문제": ko/part0/03-oracle-problem.md
+  - "Part 1 · web2 감사":
+      - "4. 웹 입력공간 지도": ko/part1/04-web-input-space.md
+      - "5. ffuf와 워드리스트": ko/part1/05-ffuf-wordlist.md
+      - "6. 응답 오라클": ko/part1/06-response-oracle.md
+      - "7. 인증 상태 퍼징과 현실": ko/part1/07-stateful-and-reality.md
+  - "Part 2 · API 감사":
+      - "8. 스키마가 곧 문법": ko/part2/08-schema-as-grammar.md
+      - "9. Schemathesis": ko/part2/09-schemathesis.md
+      - "10. 상태저장 시퀀스 퍼징": ko/part2/10-stateful-sequences.md
+      - "11. API 오라클": ko/part2/11-api-oracle.md
+  - "Part 3 · web3 감사":
+      - "12. 컨트랙트 입력공간": ko/part3/12-contract-input-space.md
+      - "13. forge fuzz 입문": ko/part3/13-forge-fuzz.md
+      - "14. invariant와 핸들러": ko/part3/14-invariant-handlers.md
+      - "15. 불변식 설계와 실전": ko/part3/15-invariant-design.md
+  - "Part 4 · 회고":
+      - "16. 세 도메인 비교": ko/part4/16-comparison.md
