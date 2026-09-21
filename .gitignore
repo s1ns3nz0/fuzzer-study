@@ -7,3 +7,4 @@ __pycache__/
 # 랩 실행 산출물
 labs/**/out/
 labs/**/*.log
+labs/**/.schemathesis/

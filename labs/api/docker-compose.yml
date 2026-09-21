@@ -1,0 +1,6 @@
+services:
+  target:
+    image: erev0s/vampi:latest
+    # 127.0.0.1 에만 바인딩. 의도적으로 취약한 API 다.
+    ports:
+      - "127.0.0.1:5005:5000"
