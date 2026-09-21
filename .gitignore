@@ -8,3 +8,9 @@ __pycache__/
 labs/**/out/
 labs/**/*.log
 labs/**/.schemathesis/
+
+# Foundry
+labs/web3/out/
+labs/web3/cache/
+labs/web3/lib/
+labs/web3/broadcast/
