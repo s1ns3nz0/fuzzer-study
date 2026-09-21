@@ -71,4 +71,4 @@ Part 0 을 먼저 읽으십시오. 세 페이지 분량이고, 나머지 전부�
 ## 라이선스
 
 본문 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.ko),
-코드 및 랩 [MIT](https://github.com/example/fuzzer-study/blob/main/LICENSE).
+코드 및 랩 [MIT](https://github.com/s1ns3nz0/fuzzer-study/blob/main/LICENSE).

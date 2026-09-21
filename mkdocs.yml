@@ -1,7 +1,7 @@
 site_name: 퍼징으로 읽는 보안 감사
 site_description: 입력공간 탐색이라는 하나의 뼈대로 web2 · API · web3 감사를 관통하는 퍼징 교재
-site_url: https://example.github.io/fuzzer-study/
-repo_url: https://github.com/example/fuzzer-study
+site_url: https://s1ns3nz0.github.io/fuzzer-study/
+repo_url: https://github.com/s1ns3nz0/fuzzer-study
 edit_uri: edit/main/docs/
 
 docs_dir: docs
