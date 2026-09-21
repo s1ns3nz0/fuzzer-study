@@ -59,6 +59,7 @@ plugins:
 nav:
   - 소개: ko/index.md
   - 범위와 안전: ko/scope-and-safety.md
+  - 용어집: ko/glossary.md
   - "Part 0 · 퍼징의 뼈대":
       - "1. 입력공간과 탐색": ko/part0/01-what-is-fuzzing.md
       - "2. 퍼징의 5요소": ko/part0/02-five-elements.md
